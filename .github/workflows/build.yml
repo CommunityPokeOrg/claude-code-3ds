@@ -45,9 +45,10 @@ jobs:
           chmod +x /tmp/makerom/makerom
 
       - name: Package .cia
-        run: /tmp/makerom/makerom -f cia -o claude-code-3ds.cia \
-          -rsf resources/template.rsf -target t \
-          -elf claude-code-3ds.elf -icon claude-code-3ds.smdh
+        run: |
+          /tmp/makerom/makerom -f cia -o claude-code-3ds.cia \
+            -rsf resources/template.rsf -target t \
+            -elf claude-code-3ds.elf -icon claude-code-3ds.smdh
 
       - name: Upload release artifacts
         uses: actions/upload-artifact@v4
